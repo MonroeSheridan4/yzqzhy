@@ -1,0 +1,10 @@
+<!-- 全局登录弹窗组件 -->
+<login-popup 
+  visible="{{showLoginPopup}}" 
+  bind:close="onLoginPopupClose"
+  bind:loginsuccess="onLoginSuccess"
+/>
+
+<!-- 全局自定义加载组件 -->
+<custom-loading id="custom-loading" visible="{{showCustomLoading}}" text="{{loadingText}}" mask="{{loadingMask}}" />
+

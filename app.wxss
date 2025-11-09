@@ -1,0 +1,250 @@
+/**app.wxss**/
+page {
+  background-color: #F5F5F5;
+  font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+/* ==================== TDesign 全局消息通知位置优化 ==================== */
+/* 调整 t-message 和 t-toast 的显示位置，避免被状态栏遮挡 */
+t-message {
+  position: fixed !important;
+  top: 100rpx !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+}
+
+t-toast {
+  z-index: 99999 !important;
+}
+
+/* ==================== TDesign 主题变量 - Light 简约白 ==================== */
+page {
+  /* 品牌色 - TDesign标准蓝 */
+  --td-brand-color: #0052D9;
+  --td-brand-color-hover: #003BA3;
+  --td-brand-color-focus: #0052D9;
+  --td-brand-color-active: #002870;
+  --td-brand-color-disabled: rgba(0, 82, 217, 0.4);
+  --td-brand-color-light: rgba(0, 82, 217, 0.2);
+  
+  /* 功能色 */
+  --td-success-color: #00A870;
+  --td-warning-color: #ED7B2F;
+  --td-error-color: #E34D59;
+  --td-info-color: #7289DA;
+  
+  /* 背景色 */
+  --td-bg-color-page: #FFFFFF;
+  --td-bg-color-container: #F3F3F3;
+  --td-bg-color-container-hover: #E8E8E8;
+  --td-bg-color-container-active: #DCDCDC;
+  --td-bg-color-secondarycontainer: #F8F8F8;
+  --td-bg-color-component: #FFFFFF;
+  --td-bg-color-component-hover: #F3F3F3;
+  --td-bg-color-component-active: #E8E8E8;
+  --td-bg-color-component-disabled: rgba(243, 243, 243, 0.5);
+  
+  /* 文字颜色 */
+  --td-text-color-primary: #000000;
+  --td-text-color-secondary: #666666;
+  --td-text-color-placeholder: rgba(102, 102, 102, 0.6);
+  --td-text-color-disabled: rgba(102, 102, 102, 0.4);
+  --td-text-color-anti: #FFFFFF;
+  --td-text-color-brand: #0052D9;
+  --td-text-color-link: #0052D9;
+  
+  /* 字体颜色（灰度） */
+  --td-font-gray-1: #000000;
+  --td-font-gray-2: #333333;
+  --td-font-gray-3: #666666;
+  --td-font-gray-4: #999999;
+  --td-font-white-1: #FFFFFF;
+  --td-font-white-2: rgba(255, 255, 255, 0.55);
+  --td-font-white-3: rgba(255, 255, 255, 0.35);
+  --td-font-white-4: rgba(255, 255, 255, 0.22);
+  
+  /* 边框颜色 */
+  --td-border-level-1-color: #DCDCDC;
+  --td-border-level-2-color: #F3F3F3;
+  --td-component-border: #DCDCDC;
+  --td-component-stroke: #DCDCDC;
+  
+  /* 阴影 */
+  --td-shadow-1: 0 1px 10px rgba(0, 0, 0, .05), 0 4px 5px rgba(0, 0, 0, .08);
+  --td-shadow-2: 0 3px 14px 2px rgba(0, 0, 0, .05), 0 8px 10px 1px rgba(0, 0, 0, .06);
+  --td-shadow-3: 0 6px 30px 5px rgba(0, 0, 0, .05), 0 16px 24px 2px rgba(0, 0, 0, .08);
+  
+  /* 蒙层 */
+  --td-mask-active: rgba(0, 0, 0, .6);
+  --td-mask-disabled: rgba(0, 0, 0, .4);
+  
+  /* 状态栏高度（用于消息通知定位） */
+  --status-bar-height: 44px;
+}
+
+/* ==================== TDesign 主题变量 - Dark 炫酷黑 ==================== */
+page[data-theme="dark"] {
+  --td-brand-color: #0052D9;
+  --td-brand-color-hover: #366EF4;
+  --td-brand-color-active: #4787FF;
+  --td-brand-color-disabled: rgba(0, 82, 217, 0.4);
+  --td-brand-color-light: rgba(0, 82, 217, 0.2);
+  
+  --td-success-color: #00A870;
+  --td-warning-color: #ED7B2F;
+  --td-error-color: #E34D59;
+  --td-info-color: #366EF4;
+  
+  --td-bg-color-page: #1A1A1A;
+  --td-bg-color-container: #242424;
+  --td-bg-color-container-hover: #2E2E2E;
+  --td-bg-color-container-active: #383838;
+  --td-bg-color-secondarycontainer: #1F1F1F;
+  --td-bg-color-component: #2E2E2E;
+  --td-bg-color-component-hover: #383838;
+  --td-bg-color-component-active: #424242;
+  --td-bg-color-component-disabled: rgba(46, 46, 46, 0.5);
+  
+  --td-text-color-primary: #E7E7E7;
+  --td-text-color-secondary: #B9B9B9;
+  --td-text-color-placeholder: rgba(185, 185, 185, 0.6);
+  --td-text-color-disabled: rgba(185, 185, 185, 0.4);
+  --td-text-color-anti: #000000;
+  --td-text-color-brand: #0052D9;
+  --td-text-color-link: #0052D9;
+  
+  --td-font-gray-1: #E7E7E7;
+  --td-font-gray-2: #CFCFCF;
+  --td-font-gray-3: #B9B9B9;
+  --td-font-gray-4: #999999;
+  
+  --td-border-level-1-color: #373737;
+  --td-border-level-2-color: #2E2E2E;
+  --td-component-border: #373737;
+  --td-component-stroke: #373737;
+  
+  --td-shadow-1: 0 1px 10px rgba(0, 0, 0, .3), 0 4px 5px rgba(0, 0, 0, .4);
+  --td-shadow-2: 0 3px 14px 2px rgba(0, 0, 0, .3), 0 8px 10px 1px rgba(0, 0, 0, .4);
+  --td-shadow-3: 0 6px 30px 5px rgba(0, 0, 0, .3), 0 16px 24px 2px rgba(0, 0, 0, .4);
+  
+  --td-mask-active: rgba(0, 0, 0, .8);
+  --td-mask-disabled: rgba(0, 0, 0, .6);
+}
+
+/* ==================== 移除了 Purple, Blue, Pink, Green 主题 ==================== */
+/* 现在只保留 Light 和 Dark 两种标准主题，完美适配TDesign官方规范 */
+
+/* ==================== 全局颜色变量（主题色） ==================== */
+:root {
+  --primary-color: #0052D9;  /* 主题色：TDesign 蓝 */
+  --secondary-color: #366EF4;
+  --accent-color: #FF6B6B;
+  --success-color: #00A870;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --bg-white: #FFFFFF;
+  --bg-gray: #F5F5F5;
+  --border-color: #E5E5E5;
+}
+
+/* ==================== 渐变背景（紫色改为主题色） ==================== */
+.gradient-blue {
+  background: linear-gradient(135deg, #0052D9 0%, #366EF4 100%);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #0052D9 0%, #366EF4 100%);  /* 紫色改为主题色 */
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #FFA500 0%, #FF6347 100%);
+}
+
+/* ==================== 动画效果 ==================== */
+
+/* 淡入动画 */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 上滑动画 */
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100rpx);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 骨架屏加载动画 */
+.skeleton {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 旋转动画 */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 缩放动画 */
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ==================== 安全区域适配 ==================== */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
